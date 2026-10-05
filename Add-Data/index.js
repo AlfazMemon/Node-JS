@@ -6,6 +6,7 @@ const app = express()
         "title": "Iphone 18 pro",
         "price": 179900,
         "description": "brown color 512",
+        "category": "electronic",
         "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
         "rating": {
             "rate": 3.6,
@@ -13,7 +14,9 @@ const app = express()
         }
     }
 
-
+app.get("/",(req,res)=>{
+    res.end("Welcome to My web Page")
+})
 
 app.get("/products",(req,res)=>{
     fs.readFile("db.json","utf-8",(err,data)=>{
@@ -33,7 +36,7 @@ app.post("/add",(req,res)=>{
             }
 
             else{
-                let dataFromdb = JSON.parse(data)
+                const dataFromdb = JSON.parse(data)
                 let productId = dataFromdb.Products[dataFromdb.Products.length - 1].id;
 
                 const newProduct = {...NewProduct,id:++productId};

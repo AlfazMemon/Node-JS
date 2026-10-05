@@ -239,6 +239,18 @@
                 "rate": 3.6,
                 "count": 145
             }
+        },
+        {
+            "id": 21,
+            "title": "Iphone 18 pro",
+            "price": 179900,
+            "description": "brown color 512",
+            "category": "electronic",
+            "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+            "rating": {
+                "rate": 3.6,
+                "count": 145
+            }
         }
     ]
 }
