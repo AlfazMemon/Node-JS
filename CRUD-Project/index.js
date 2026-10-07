@@ -50,10 +50,32 @@ app.post("/add",(req,res)=>{
                     res.end("Something went wrong while writing data")
                 }
                 else{
-                    console.log("data added succesfully")
+                    res.end("data added succesfully")
                 }
             })
         }
+    })
+})
+
+app.delete("/deleteproduct/:id",(req,res)=>{
+    const {id} = req.params
+
+    fs.readFile("db.json","utf-8",(err,data)=>{
+            if(err){
+                res.send(err)
+            }
+            else{
+                const DatafromDB =JSON.parse(data)
+                const filterProduct = DatafromDB.Products.filter((el)=>el.id != id)
+                fs.writeFile("db.json",JSON.stringify({Products:filterProduct}),(err)=>{
+                    if(err){
+                        res.send(err)
+                    }
+                    else{
+                        res.end("Data deleted Successfully")
+                    }
+                })
+            }
     })
 })
 
