@@ -32,8 +32,8 @@ app.post("/books",async(req,res)=>{
 
 //Get
 app.get("/books", async (req, res) => {
-  const Books = await BookData.find();
-  res.json(Books);
+  const Book = await BookData.find();
+  res.json(Book);
 });
 
 //Update
@@ -60,3 +60,13 @@ app.listen(1234,()=>{
     console.log("Server is running on port 1234")
     
 })
+
+// {
+//     "title": "Atomic Habits",
+//     "author": "James Clear",
+//     "price": 450,
+//     "category": "Self-Help",
+//     "stock": 25,
+//     "published": true,
+//     "rating": 4.8
+// }
