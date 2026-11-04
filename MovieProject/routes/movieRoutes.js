@@ -18,4 +18,12 @@ router.get("/movies",MovieController.getAllMovies)
 
 router.get("/movies/:id",MovieController.getSingleMovie)
 
+// Edit / Update Movie
+
+router.put("/editmovie/:id",MovieController.editMovie)
+
+// Delete Movie
+
+router.delete("/deletemovie/:id",MovieController.deleteMovie)
+
 module.exports = router
